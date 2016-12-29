@@ -1,0 +1,288 @@
+/*main 开始*/
+
+.main{
+    overflow: hidden;
+    max-width: 1920px;
+    width: 100%;
+    height: 3652px;
+    position: relative;
+    background: url("../images/main_banner_bg.jpg") no-repeat center top;
+}
+.main .top_menu{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 20;
+    background: rgba(255,255,255,0);
+    transition: all ease-in-out 0.33s;
+}
+.main .top_menu .left_part{
+    width: 346px;
+    height: 74px;
+    padding-left: 15px;
+    padding-top: 13px;
+    float: left;
+    opacity: 0;
+    transition: all ease-in-out 0.5s;
+}
+.main .top_menu .left_part>p{
+    float: left;
+    width: 16px;
+    line-height: 16px;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    margin-top: 3px;
+    margin-right: 10px;
+}
+.main .top_menu .left_part img{
+    float: left;
+    width: 74px;
+    height: 74px;
+    margin-right: 15px;
+}
+.main .top_menu .left_part a{
+    float: left;
+    height: 72px;
+    padding-left: 15px;
+    border-left: 1px solid rgb(204, 204, 204);
+}
+.main .top_menu .left_part .logo_icon{
+    float: left;
+    width: 73px;
+    height: 73px;
+    margin-right: 14px;
+    background: url("../images/index_z.png") no-repeat -555px -208px;
+}
+.main .top_menu .left_part .game_name{
+    float: left;
+    padding-top: 2px;
+    color: rgb(51, 51, 51);
+    font-size: 16px;
+}
+.top_menu .left_part .game_name h3{
+    font-size: 32px;
+    font-weight: 700;
+}
+.main .top_menu .right_part{
+    width: 708px;
+    height: 65px;
+    padding-top: 35px;
+    margin-right: 15px;
+    float: right;
+}
+.top_menu .right_part li{
+    position: relative;
+    float: left;
+    width: 118px;
+    height: 65px;
+}
+.top_menu .right_part li a{
+    display: block;
+    width: 100px;
+    height: 100%;
+    text-align: center;
+    line-height: 35px;
+    color: rgb(51, 51, 51);
+    font-size: 16px;
+}
+.top_menu .right_part li a:hover{
+    color: #cc4336;
+}
+.top_menu .right_part li span{
+    display: block;
+    position: absolute;
+    right: 0px;
+    top: 8px;
+    width: 15px;
+    height: 24px;
+    background: url("../images/index_z.png") no-repeat -1141px -128px;
+}
+.top_menu .menu_more{
+    position: absolute;
+    top: 100px;
+    width: 100%;
+    height: 0;
+    background: #e1ebeb;
+    right: 0;
+    transition: all .3s linear;
+    overflow: hidden;
+}
+.top_menu .menu_more.show{
+    height: 174px;
+}
+.top_menu .menu_more .tongren1{
+    padding-top: 33px;
+    height: 104px;
+    width: 100%;
+    transition: all .5s linear;
+    opacity: 0;
+}
+.top_menu .list_item{
+    float: right;
+    width: 222px;
+    height: 104px;
+    border-left: 1px solid #c8d0d0;
+
+}
+.top_menu .list_item.firstone{
+    border:0;
+}
+.top_menu .list_item .inner_item{
+    transition: all .5s ease;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    bottom: 0;
+}
+.top_menu .list_item .inner_item:hover{
+    bottom: 16px;
+}
+.top_menu .list_item .pic{
+    display: block;
+    width: 83px;
+    height: 66px;
+    margin: 0 auto;
+    background: url("../images/index_z.png") no-repeat -402px -800px;
+}
+.top_menu .list_item .cos{
+    background-position: -768px -544px;
+    width: 65px;
+    height: 71px;
+}
+.top_menu .list_item .huihua{
+    background-position: -621px -692px;
+    width: 71px;
+    height: 70px;
+}
+.top_menu .list_item .name{
+    color: #666;
+    font-size: 16px;
+    text-align: center;
+    display: block;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+.main .banner{
+    width: 100%;
+    height: 585px;
+    /*background: rgba(240, 240, 0, 0.5);*/
+    position: relative;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+.main .banner .qingming{
+    position: absolute;
+    left: 50%;
+    top: 40px;
+    margin-left: -250px;
+    transition: all 1s .7s;
+    transform: translate3d(0,250px,0);
+    opacity: 0;
+}
+.main .banner .shenle{
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin-left: -344px;
+    transition: all 1s .5s;
+    transform: translate3d(0,250px,0);
+    opacity: 0;
+}
+.main .banner .slogon{  
+    position: absolute;
+    left:50%;
+    top: 65px;
+    margin-left: -530px;
+    transition: all 1s .5s;
+    transform: translate3d(0,-150px,0);
+    opacity: 0;
+ }
+.main .banner .logo{
+    position: absolute;
+    left: 50px;
+    top: 38px;
+    overflow: hidden;
+    transition: all 1s 1.2s;
+    transform: translate3d(-50px,0,0);
+    opacity: 0;
+}
+.main .banner .logo img{
+    transition: all .3s linear;
+    transform: scale(1);
+    opacity: 1;
+}
+.main .banner .qingming.animate,.main .banner .shenle.animate, .main .banner .slogon.animate,.main .banner .logo.animate{
+    transform: translate3d(0,0,0);
+    opacity: 1;
+}
+.main .banner .open_sever_pop{
+    position: absolute;
+    width: 135px;
+    height: 118px;
+    bottom: 3px;
+    left: 50%;
+    margin-left: -535px;
+}
+.main .banner .open_sever_pop img{
+    width: 102px;
+}
+
+.main .news_section{
+    background: rgb(255, 255, 255);
+    width: 100%;
+    height: 319px;
+    position: relative;
+    top: 0px;
+    left: 0;
+    z-index: 2;
+    padding-top: 30px;
+}
+.main .sidebar{
+    width: 707px;
+    height: 1181px;
+    position: absolute;
+    left: 50%;
+    margin-left: 242px;
+    top: 345px;
+    background: pink;
+    z-index:2;
+}
+.strategy_section {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    background: #cccccc;
+}
+/*main 结束*/
+
+/*pop_mask 开始*/
+.sever_pop{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    text-align: center;
+    left: 0;
+    top: 0;
+    z-index: 50;
+    opacity: 0;
+    transform: scale(0);
+    transition: all .5s linear;
+}
+/*pop_mask 结束*/
+
+/*footer开始*/
+.footer.index_footer{
+    background: rgb(195, 216, 226);
+    margin-top: -100px;
+    position: relative;
+    z-index: 3;
+}
+/*footer结束*/

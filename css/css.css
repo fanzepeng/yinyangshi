@@ -1,0 +1,265 @@
+﻿/*宣传区域开始*/
+.fzp{
+    width: 100%;
+    height: 3313px;
+    position: relative;
+    background-image: url("../images/bg_fad36e9.jpg");
+}
+.fzp .show{
+    width: 100%;
+    height: 3000px;
+    background: url("../images/home-zs_b5d86e7.png") repeat-y -50px;
+    position: absolute;
+    z-index: 1;
+}
+.fzp .role{
+    width: 100%;
+    height: 660px;
+    position: absolute;
+    top: 345px;
+    z-index: 2;
+    background: url("../images/home-role-5_6cbae39.png") no-repeat center center;
+}
+.fzp .audio{
+    position: absolute;
+    width: 55px;
+    height: 213px;
+    background-image: url("../images/home-audio-5_2d99600.png");
+    top:265px;
+    left:50%;
+    margin-left: -200px;
+    z-index: 3;
+}
+.fzp .audio .audio5{
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    top:149px;
+    left: 26px;
+    z-index: 6;
+}
+.fzp .audio-t{
+    width: 54px;
+    height: 189px;
+    position: absolute;
+    background-image: url("../images/home-audio-6_60d9126.png");
+    top:475px;
+    left:50%;
+    margin-left: 80px;
+    z-index: 3;
+}
+.fzp .audio-t .audio6{
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    /*background-color: pink;*/
+    top:125px;
+    left: 25px;
+    z-index: 6;
+}
+.fzp .home-btn{
+    position: absolute;
+    width: 120px;
+    height: 30px;
+    top:100px;
+    right:0;
+    background-image: url("../images/home-home-link_d325160.png");
+    z-index: 3;
+    opacity: 0;
+}
+.fzp .home-btn:hover{
+    background-image: url("../images/home-home-link-hover_5773fd6.png");
+}
+.fzp .home-btn a{
+    width: 120px;
+    height: 30px;
+    display:block;
+}
+.fzp .fc{
+    width: 53px;
+    height: 53px;
+    position: absolute;
+    background-image: url("../images/home-fc_e40e836.png");
+    top: 165px ;
+    right:50%;
+    margin-right: -350px;
+    z-index: 4;
+    /*transform: rotate(30deg);*/
+}
+.fzp .download-area{
+    width: 485px;
+    height: 212px;
+    position: absolute;
+    /*background-color: red;*/
+    background-image: url("../images/home-download-area-bg_b14dfd7.png");
+    top:530px;
+    left:50%;
+    margin-left: -200px;
+    z-index: 5;
+}
+.fzp .download-area .ewm-box{
+    width: 107px;
+    height: 107px;
+    margin-top: 50px;
+    float: left;
+
+}
+.fzp .download-area .ewm-light{
+    width: 104px;
+    height: 9px;
+    background: url("../images/home-ewm-light_9b556af.png");
+    position: absolute;
+    top:49px;
+    left:-10px;
+}
+.fzp .mid{
+    float: left;
+}
+.fzp .download-area .ios-btn{
+    display: block;
+    width: 171px;
+    height: 51px;
+    margin-top: 50px;
+    margin-left: 5px;
+    background-image: url("../images/home-download-ios_3674e78.png");
+
+}
+.fzp .download-area .ios-btn:hover{
+    background-image: url("../images/home-download-ios-hover_7363eef.png");
+}
+.fzp .download-area .and-btn{
+    width: 171px;
+    height: 51px;
+    display: block;
+    background-image: url("../images/home-download-android_a5abbad.png");
+
+    margin-top: 5px;
+    margin-left: 5px;
+}
+.fzp .download-area .and-btn:hover{
+    background-image: url("../images/home-download-android-hover_18ed9af.png");
+}
+.fzp .download-area .libao-btn{
+    display: block;
+    width: 201px;
+    height: 203px;
+    background: url("../images/home-libao-btn_62646d9.png") no-repeat center;
+    float: right;
+}
+.fzp .download-area .libao-btn:hover{
+    background-image: url("../images/home-libao-btn-hover_2929d6e.png");
+}
+/*悬浮沙子开始*/
+.fzp .sand .sand1{
+    width: 134px;
+    height: 151px;
+    background-image: url("../images/home-sand01_b9d7422.png");
+    position: absolute;
+    top:0px;
+    left:0px;
+    z-index: 1000;
+}
+.fzp .sand .sand2{
+    width: 50px;
+    height: 66px;
+    background-image: url("../images/home-sand02_0062467.png");
+    position: absolute;
+    top:345px;
+    left:0px;
+    z-index: 1000;
+}
+.fzp .sand .sand3{
+    width: 484px;
+    height: 124px;
+    position: fixed;
+    background-image: url("../images/home-sand03_1d14a04.png");
+    bottom:0;
+    left:0px;
+    z-index: 1000;
+}
+.fzp .sand .sand4{
+    width: 505px;
+    height: 74px;
+    position: absolute;
+    background-image: url("../images/home-sand04_9961325.png");
+    right:0px;
+    top: 0;
+    z-index: 1000;
+}
+.fzp .sand .sand5{
+    width: 159px;
+    height: 77px;
+    position: absolute;
+    background-image: url("../images/home-sand05_d45f3f1.png");
+    right:0px;
+    top: 200px;
+    z-index: 1000;
+}
+.fzp .sand .sand6{
+    width: 24px;
+    height: 42px;
+    position: absolute;
+    background-image: url("../images/home-sand06_f6687a8.png");
+    top:495px;
+    right:0px;
+    z-index: 1000;
+}
+.fzp .sand .sand7{
+    width: 305px;
+    height: 51px;
+    background-image: url("../images/home-sand07_4fd88b2.png");
+    position: fixed;
+    bottom: 0;
+    right: 0px;;
+    z-index: 1000;
+    /*悬浮沙子结束*/
+}
+.fzp .streamer{
+    width: 667px;
+    height: 96px;
+    background-image: url("../images/streamer_5cb3f04.png");
+    position: absolute;
+    top:0px;
+    left:50%;
+    margin-top: 0px;
+    margin-left: -335px;
+    z-index: 10;
+}
+.fzp .logo-btn{
+    width: 118px;
+    height: 85px;
+    position: absolute;
+    top:28px;
+    left:0;
+    z-index: 10;
+    opacity: 0;
+}
+.fzp .slogan1{
+    width: 511px;
+    height: 496px;
+    background-image: url("../images/home-slogan_0a453fd.png");
+    position: absolute;
+    top:-20px;
+    left:-170px;
+    z-index: 10;
+}
+.fzp .slogan1 a{
+    display: block;
+    width: 75px;
+    height: 44px;
+    background: url("../images/home-video-btn_a41e62a.png") no-repeat 33px 15px;
+    position: absolute;
+    top:398px;
+    left:291px;
+    z-index: 10;
+}
+
+.fzp .slogan2{
+    width: 161px;
+    height: 616px;
+    position: absolute;
+    background-image: url("../images/home-slogan-sub_1954e67.png");
+    top:455px;
+    right:140px;
+    z-index: 9;
+}

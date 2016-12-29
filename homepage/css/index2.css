@@ -1,0 +1,410 @@
+/*/!*设置定css的编码*!/
+@charset "UTF-8";
+
+
+/!*初始化*!/
+html, body,span, h1, h2, h3, h4, h5, h6, div, dl, dt, dd, ul, ol, li,img, p{
+    margin: 0px;
+    padding: 0px;
+}
+
+a, button {
+    cursor: pointer;
+}
+
+h1, h2, h3, h4, h5, h6, em{
+    font-weight: 700;
+}
+
+a, a:hover {
+    text-decoration: none;
+}
+
+html, body {
+    font-family: "Microsoft Yahei";
+}
+
+/!*清除浮动*!/
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+/!* css骇客 *!/
+.clearfix {
+    *zoom: 1; /!*IE/7/6*!/
+}
+
+html, body {
+    min-width: 1400px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-decoration: none;
+}
+
+li, ul {
+    list-style: none;
+}
+s,i,em {
+    font-style: normal;
+    text-decoration: none;
+}
+
+.w {
+    width: 1220px;
+    margin: 0 auto;
+}*/
+.w_y {
+    width: 1220px;
+    margin: 0 auto;
+}
+.tongren {
+    margin-top: -26px;
+    height: 537px;
+    /*background-color: pink;*/
+    position: relative;
+
+}
+.tongren .main{
+    background: #ffffff;
+}
+.tongren_top {
+    width: 1220px;
+    height: 77px;
+    /*background-color: yellowgreen;*/
+    margin: 0 auto;
+}
+.tongren_logo {
+    float: left;
+    width: 112px;
+    height: 106px;
+    /*background-color: red;*/
+    background-image: url("../images/index_z_a4d5870.png");
+    background-position: -663px -379px;
+    margin-top: -19px;
+    margin-right: 24px;
+    background-repeat: no-repeat;
+}
+
+.tongren_title {
+    height: 77px;
+    width: 1062px;
+    /*background-color: blue;*/
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+
+}
+.tongren_title li{
+    float: left;
+    width: 155px;
+    height: 75px;
+    /*background-color: skyblue;*/
+    border-bottom: 2px solid rgb(0, 0, 0);
+    position: relative;
+
+
+    /*text-align: center;*/
+}
+
+.tongren_title a {
+    position: absolute;
+    display: block;
+    border-right: 1px dotted rgb(0,0,0);
+    top: 10px;
+    width: 155px;
+    height: 58px;
+
+
+}
+.tongren_title a span {
+    width: 155px;
+    height: 18px;
+    position: absolute;
+    top: 0px;
+    left: 45px;
+    /*background-color: red;*/
+    transition: all linear .3s;
+}
+.tongren_title a:hover span{
+    top:-10px;
+}
+
+    /*table栏开始*/
+.tongren_title li.active {
+    /*background-color: pink;*/
+}
+
+.tongren_title .tongren1 em{
+    width: 72px;
+    height: 18px;
+    position: absolute;
+    /*background-color: red;*/
+    background: url("../images/index_z_a4d5870.png") no-repeat -575px -660px;
+}
+.tongren_title .tongren2 em{
+    width: 70px;
+    height: 17px;
+    position: absolute;
+    /*background-color: red;*/
+    background: url("../images/index_z_a4d5870.png") no-repeat -648px -660px;
+}
+.tongren_title .tongren3 em{
+    width: 72px;
+    height: 18px;
+    position: absolute;
+    /*background-color: red;*/
+    background: url("../images/index_z_a4d5870.png") no-repeat -776px -459px;
+}
+.tongren_title .tongren4 em{
+    width: 72px;
+    height: 18px;
+    position: absolute;
+    /*background-color: red;*/
+    background: url("../images/index_z_a4d5870.png") no-repeat -774px -350px;
+}
+.tongren_title .tongren5 em{
+    width: 72px;
+    height: 18px;
+    position: absolute;
+    /*background-color: red;*/
+    background: url("../images/index_z_a4d5870.png") no-repeat -767px -634px;
+}
+.tongren_title .tongren6 em{
+    width: 72px;
+    height: 18px;
+    position: absolute;
+    /*background-color: red;*/
+    background: url("../images/index_z_a4d5870.png") no-repeat -765px -616px;
+}
+.tongren_title .tongren7 {
+    width: 101px;
+    height: 24px;
+    display: block;
+    /*background-color: red;*/
+    position: absolute;
+    background: url("../images/index_z_a4d5870.png") no-repeat -475px -660px;
+    border-right: none;
+    top: 24px;
+    right: 10px;
+}
+
+/*表头里面i的处理开始*/
+.tongren_title a i{
+    width: 155px;
+    height: 54px;
+    position: absolute;
+    /*background-color: red;*/
+    bottom: -70px;
+    height: 54px;
+    background: url("../images/icons_8a667d7.png") no-repeat;
+    transition: all linear .3s;
+}
+.tongren_title a:hover i, .tongren_title a.on i {
+    bottom: -10px
+}
+.tongren_title .tongren1 i{
+    background-position: 0 0;
+}
+.tongren_title .tongren2 i{
+    background-position:-165px 0;
+}
+.tongren_title .tongren3 i{
+    background-position: -314px 0px;
+}
+.tongren_title .tongren4 i{
+    background-position: -476px 0px;
+}
+.tongren_title .tongren5 i{
+    background-position: -625px 0px;
+}
+.tongren_title .tongren6 i{
+    background-position: -924px 0px;
+}
+/*表头里面i的处理结束*/
+
+
+/*table栏结束*/
+
+
+
+/*同仁主体部分开始*/
+.tongren_body{
+    overflow: hidden;
+    position: relative;
+    width:1220px;
+    height: 480px;
+    margin-top: 20px;
+    /*background-color : pink;*/
+}
+.tongren_bodybox{
+    height: 480px;
+    width: 7320px;
+    /*background-color: yellowgreen;*/
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.tongren_body ul{
+    float: left;
+    height: 480px;
+    width: 1220px;
+}
+
+.tongren_body ul li{
+    float: left;
+    margin: 20px 15px 0  0;
+    text-align: center;
+}
+.tongren_body .main li p{
+    line-height: 42px;
+    color: rgb(102, 102, 102);
+    height: 42px;
+    font-size: 14px;
+}
+/*同仁主体部分结束*/
+
+
+
+/*阴阳师视频 壁纸开始*/
+.yys{
+    margin-top: 50px;
+    margin-bottom: 30px;
+    height: 513px;
+    background: url("../images/video_bg_d61c2a9.jpg");
+}
+.yys .banner{
+    width: 1200px;
+    height: 488px;
+    margin: 0px auto;
+    padding-top: 58px;
+    /*background-color: greenyellow;*/
+}
+.video p{
+    color: rgb(102, 102, 102);
+}
+.paper p{
+    color: rgb(102, 102, 102);
+}
+/*视频开始*/
+.banner .video{
+    float: left;
+    width: 580px;
+    height: 430px;
+    text-align: center;
+    /*background-color: greenyellow;*/
+}
+.video span{
+    float: left;
+    width: 227px;
+    height: 148px;
+    /*background-color: red;*/
+    background: url("../images/index_z_a4d5870.png") no-repeat -248px -544px;;
+}
+.video .video_a1{
+    float: right;
+    width: 270px;
+    height: 153px;
+    margin-right: 20px;
+    /*background-color: red;*/
+}
+.video .video_a2 {
+    float: left;
+    width: 270px;
+    height: 153px;
+    margin-top: 60px;
+}
+.video .video_a3 {
+    float: right;
+    width: 270px;
+    height: 153px;
+    margin-top: 55px;
+    margin-right: 20px;
+}
+.video a,.paper a{
+    position: relative;
+}
+/*视频结束*/
+
+
+/*壁纸开始*/
+.banner .paper{
+    float: right;
+    width: 580px;
+    height: 430px;
+    text-align: center;
+    /*background-color: pink;*/
+}
+.paper span{
+    float: left;
+    width: 227px;
+    height: 148px;
+    /*background-color: red;*/
+    background: url("../images/index_z_a4d5870.png") no-repeat -20px -544px;
+}
+.paper .paper_a1{
+    float: right;
+    width: 270px;
+    height: 153px;
+    margin-right: 20px;
+}
+.paper .paper_a2{
+    float: left;
+    width: 270px;
+    height: 153px;
+    margin-top: 60px;
+}
+.paper .paper_a3{
+    float: right;
+    width: 270px;
+    height: 153px;
+    margin-top: 55px;
+    margin-right: 20px;
+}
+
+.video .cover,.paper .cover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    background: url("../images/mask_6b7d844.png");
+    transition: all linear .3s;
+    opacity: 0;
+}
+.video a:hover .cover,.paper a:hover .cover{
+    opacity: 1;
+}
+.video .cover em,.paper .cover em{
+    position: absolute;
+    width: 79px;
+    height: 93px;
+    left: 50%;
+    margin-left: -40px;
+    top: 50%;
+    margin-top: -46px;
+    background: url("../images/index_z_b491e8f.png") no-repeat -1038px -227px;
+}
+/*阴阳师视频 壁纸结束*/
+/*.video img,.paper img{
+    transform: scale(1);
+    transition: all linear .3s;
+}
+.video a:hover img,.paper a:hover img{
+    transform: scale(1.1);
+}*/
+
+.tongren_bodybox li{
+    overflow: hidden;
+}
+.tongren_bodybox a img{
+    transform: scale(1);
+    transition: all linear .3s;
+}
+.tongren_bodybox a:hover img{
+    transform: scale(1.1);
+}

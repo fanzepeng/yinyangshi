@@ -1,0 +1,462 @@
+/*设置定css的编码*/
+/*@charset "UTF-8";*/
+/*官方反馈开始*/
+.content-part-lt .content-title-lt{
+    width: 1064px;
+    height: 179px;
+    background: url("../images/haoli-title_8c2cf27.png");
+    margin: 0 auto;
+}
+/*下面的8个活动开始*/
+.content-part-lt .newshot-lt{
+    width: 200px;
+    height: 280px;
+    display: block;
+    float: left;
+}
+#hotbox-lt{
+    height: 602px;
+    width: 1120px;
+    margin-top: 30px;
+}
+#hotbox-lt .img1{
+    margin-left: 230px;
+}
+#hotbox-lt .img2,.img5,.img7{
+    margin: 0 30px;
+}
+#hotbox-lt .img3{
+    margin-right: 230px;
+}
+#hotbox-lt .img4,.img5,.img6,.img7,.img8{
+    margin-top: 30px;
+}
+#hotbox-lt a.newshot-lt {
+    transition: 1s;
+}
+
+#hotbox-lt a.newshot-lt:hover {
+    transition: 1s;
+    transform: rotateY(360deg) translate3d(0, -10px, 0);
+}
+/*精彩活动部分开始*/
+.huodong-lt{
+    width: 1020px;
+    height: 353px;
+    margin: 200px auto;
+}
+/*标题开始*/
+.m-title-lt{
+    width: 573px;
+    height: 60px;
+    margin: 0 auto;
+    background-image: url("../images/huodong-title_d72c1e3.png");
+}
+/*下面的三个盒子开始*/
+.huodong-lt .huodong-item{
+    display: block;
+    width: 320px;
+    height: 210px;
+    float: left;
+    background-color: #fff;
+    margin-top: 83px;
+    position: relative;
+}
+.huodong-lt .pic1-lt{
+    width: 320px;
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+
+}
+.huodong-lt .pic1-lt img{
+    -webkit-transition:all 1s;
+    -moz-transition:all 1s;
+    -o-transition:all 1s;
+    width:100%;
+    height:100%;
+}
+.huodong-lt .pic1-lt img:hover{
+    -webkit-transform:scale(1.2) ;
+    -moz-transform:scale(1.2) ;
+    -o-transform:scale(1.2) ;
+}
+.pic1-lt .line-t{
+    position: absolute;
+    height: 1px;
+    width: 0px;
+    top: 10px;
+    left: 10px;
+    background-color: #ffffff;
+}
+.pic1-lt .line-r{
+    position: absolute;
+    width: 1px;
+    height: 0;
+    right: 10px;
+    top: 10px;
+    background-color: #ffffff;
+}
+.pic1-lt .line-b{
+    position: absolute;
+    height: 1px;
+    width: 0px;
+    bottom: 10px;
+    right: 10px;
+    background-color: #ffffff;
+}
+.pic1-lt .line-l{
+    position: absolute;
+    width: 1px;
+    height: 0;
+    left: 10px;
+    bottom: 10px;
+    background-color: #ffffff;
+}
+
+.huodong-lt .huodong-item2{
+    margin: 83px 30px 0 30px;
+}
+/*盒子的字体颜色*/
+.huodong-item .item-wenzi1{
+    position: absolute;
+    height: 25px;
+    left: 20px;
+    top: 157px;
+    line-height: 25px;
+    font-size: 18px;
+    color: #3a3969;
+}
+.huodong-item .item-wenzi2{
+    position: absolute;
+    height: 25px;
+    left: 20px;
+    top: 182px;
+    line-height: 25px;
+    font-size: 14px;
+    color: #3a3969;
+}
+
+
+/*这里是一个大遮罩层*/
+body{
+    height:2000px;
+    font-family: "Microsoft YaHei","Helvetica Neue",Helvetica,STHeiTi,sans-serif;
+}
+/*这里是覆盖全屏的盒子*/
+.content-haoli-box{
+    font-family: "Microsoft YaHei","Helvetica Neue",Helvetica,STHeiTi,sans-serif;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: none;
+}
+/*这里是装活动所有内容的盒子*/
+.huodong-box_content{
+    width: 770px;
+    height: 390px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin: -195px 0 0 -385px;
+    z-index: 1000;
+    display: none;
+}
+/*关闭的按钮*/
+.huodong-box_content  .cha-huodong{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 12px;
+    top:0;
+    background-image: url("../images/close-button-with-a-cross-in-a-circle_318-26587_r1_c1.jpg");
+    transition: 1s;
+
+}
+.huodong-box_content  .cha-huodong:hover {
+    transition: 1s;
+    transform: rotateY(360deg) translate3d(0, 0, 0);
+    background-image: url("../images/close-red.jpg");
+}
+/*这里是第一个活动的窗口*/
+.huodong-box_content .huodong-one{
+    width: 632px;
+    height: 390px;
+    margin: 0 auto;
+    background-color: #F1F1E7;
+    padding: 6px;
+}
+/*边框1*/
+.huodong-box_content .huodong-one .biankuang1{
+    width: 626px;
+    height: 372px;
+    border: 3px solid #90703F;
+    padding: 2px;
+}
+.huodong-box_content .huodong-one .biankuang2{
+    width: 622px;
+    height: 368px;
+    background-color: #F1F1E7;
+    border: 2px solid #90703F;
+    position: relative;
+}
+/*放二维码的左边盒子*/
+.huodong-box_content .biankuang2 .erweima-left{
+    width: 110px;
+    height: 145px;
+    background-color: #FFFEF9;
+    position: absolute;
+    left:13px;
+    top: 80px;
+}
+/*这个是二维码图片*/
+.huodong-box_content .erweima-left .erweima-img{
+    padding-left: 6px;
+    padding-top: 6px;
+}
+/*下面的第一排文字*/
+.huodong-box_content .erweima-left .wenzi1{
+    display: block;
+    position: absolute;
+    left: 16px;
+    top: 110px;
+}
+/*下面第二排文字*/
+.huodong-box_content .erweima-left .wenzi2{
+    display: block;
+    position: absolute;
+    left: 25px;
+    top: 127px;
+    text-decoration: none;
+    color: #161B2F;
+}
+/*中间的一条竖线*/
+.biankuang2 .xian-y{
+    width: 1px;
+    height: 345px;
+    background-color: #90703F;
+    position: absolute;
+    left:137px;
+    top: 10px;
+}
+/*右边的文字盒子的上面大盒子*/
+.biankuang2 .top-wenzi{
+    width: 435px;
+    height: 80px;
+    position: absolute;
+    left: 148px;
+    top:8px;
+    border-bottom: 1px solid #161B2F;
+    padding-left: 10px;
+}
+.biankuang2 .top-wenzi .top-wenzi1{
+    display: block;
+    line-height: 28px;
+    font-size: 18px;
+    color: #000;
+    text-align: left;
+    font-family: "Microsoft YaHei","Helvetica Neue",Helvetica,STHeiTi,sans-serif;
+}
+.biankuang2 .top-wenzi .top-wenzi2{
+    display: block;
+    line-height: 38px;
+    font-size: 24px;
+    color: #000;
+    text-align: left;
+    font-family: "Microsoft YaHei","Helvetica Neue",Helvetica,STHeiTi,sans-serif;
+}
+/*右边的文字盒子的下面的大盒子*/
+.biankuang2 .bot-wenzi{
+    width: 435px;
+    height: 253px;
+    position: absolute;
+    left: 148px;
+    top:93px;
+    border-top: 2px solid #161B2F;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+.biankuang2 .bot-wenzi .bot-wenzi1{
+    line-height: 25px;
+    font-size: 14px;
+    color: #555;
+    text-align: left;
+    font-family: "Microsoft YaHei","Helvetica Neue",Helvetica,STHeiTi,sans-serif;
+}
+.biankuang2 .bot-wenzi .bot-wenzi2{
+    margin: 10px 0;
+    line-height: 25px;
+    font-size: 14px;
+    color: #555;
+    text-align: left;
+    font-family: "Microsoft YaHei","Helvetica Neue",Helvetica,STHeiTi,sans-serif;
+}
+.biankuang2 .bot-wenzi .key-words{
+    color: #ea3e30;
+}
+
+
+
+/*游戏特色部分开始*/
+.part-tese{
+    margin: 0 auto;
+    height: 850px;
+    width: 1200px;
+    background-color: #161B2F;
+}
+/*游戏特色的标题开始*/
+.part-tese .tese-title-lt{
+    width: 573px;
+    height: 60px;
+    margin: 0 auto;
+    background-image: url("../images/tese-title_2120c54.png");
+}
+/*下面的轮播图开始*/
+.part-tese .wrap{
+    width:1120px;
+    margin-top: 70px;
+}
+.part-tese .wrap .slide {
+    height:550px;
+    position: relative;
+}
+.part-tese .wrap .slide li{
+    position: absolute;
+    left:200px;
+    top:0;
+}
+
+.part-tese .wrap .slide li img{
+    width:100%;
+}
+.part-tese .wrap .arrow{
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+.part-tese .wrap .prev,.next{
+    width:200px;
+    height:430px;
+    position: absolute;
+    top:70px;
+    z-index: 99;
+    cursor: pointer;
+}
+.part-tese .wrap .next{
+    right:-80px;
+}
+
+
+
+
+
+
+/*这里是8个盒子的轮播遮罩层*/
+.lunbozhezhao{
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: none;
+}
+
+
+
+/*这里是轮播图的样式*/
+#lunbobox {
+    width: 632px;
+    height: 390px;
+    padding: 5px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin: -195px 0 0 -316px;
+    z-index: 1000;
+    /*display: none;*/
+}
+
+.ad {
+    width: 632px;
+    height: 390px;
+    overflow: hidden;
+    position: relative;
+}
+
+#lunbobox .ad .bigbox {
+    width: 632px;
+    height: 390px;
+}
+
+.ad ol {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+.ad ol li {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    border: 1px solid #ccc;
+    text-align: center;
+    background: #fff;
+    float: left;
+    margin-right: 10px;
+    cursor: pointer;
+    display: inline;
+}
+
+.ad ol li.current {
+    background: yellow;
+}
+
+.ad ul li {
+    float: left;
+}
+
+.ad ul {
+    position: absolute;
+    top: 0;
+    width: 1000000px;
+}
+
+.ad ul li.current {
+    display: block;
+}
+
+#arr {
+    display: none;
+}
+
+#arr span {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    margin-top: -20px;
+    background: #000;
+    cursor: pointer;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    font-family: '黑体';
+    font-size: 30px;
+    color: #fff;
+    opacity: 0.3;
+    border: 1px solid #fff;
+}
+
+#arr #right {
+    right: 5px;
+    left: auto;
+}

@@ -1,0 +1,99 @@
+#imgList li .bigbox{
+    width: 632px;
+    height: 390px;
+    background-image: url(../images/pop-window-bg_4c6d39f.png);
+    position: relative;
+}
+#imgList li .bigbox .erweima_lt1 {
+    width: 90px;
+    height: 135px;
+    padding: 10px 10px 0 10px;
+    position: absolute;
+    left: 26px;
+    top: 97px;
+}
+.erweima_lt1 .span-erweima {
+    margin-left: 5px;
+}
+.erweima_lt1 .a-erweima{
+    margin-left: 10px;
+    text-decoration: none;
+    color: black;
+}
+/*上面的文字开始*/
+#imgList .bigbox .top_title-wenzi{
+    width: 435px;
+    height: 80px;
+    position: absolute;
+    left: 170px;
+    top: 22px;
+    padding-left: 10px;
+}
+.bigbox .top_title-wenzi .top-wenzi1_lt{
+    display: block;
+    line-height: 28px;
+    font-size: 18px;
+    color: #000;
+    text-align: left;
+    font-family: "Microsoft YaHei","Helvetica Neue",Helvetica,STHeiTi,sans-serif;
+}
+.bigbox .top_title-wenzi .top-wenzi2_lt{
+    display: block;
+    line-height: 38px;
+    font-size: 24px;
+    color: #000;
+    text-align: left;
+    font-family: "Microsoft YaHei","Helvetica Neue",Helvetica,STHeiTi,sans-serif;
+}
+/*下面的文字开始*/
+#imgList .bigbox .btn-erweima-wenzi{
+    width: 435px;
+    height: 253px;
+    position: absolute;
+    left: 155px;
+    top: 93px;
+    padding-left: 20px;
+    padding-top: 30px;
+}
+#imgList .bigbox .btn-erweima-wenzi .bot-wenzi1-lt{
+    line-height: 25px;
+    font-size: 14px;
+    color: #555;
+    text-align: left;
+    font-family: "Microsoft YaHei","Helvetica Neue",Helvetica,STHeiTi,sans-serif;
+}
+#imgList .bigbox .btn-erweima-wenzi .bot-wenzi2-lt{
+    margin: 10px 0;
+    line-height: 25px;
+    font-size: 14px;
+    color: #555;
+    text-align: left;
+    font-family: "Microsoft YaHei","Helvetica Neue",Helvetica,STHeiTi,sans-serif;
+}
+#imgList .bigbox .btn-erweima-wenzi .bot-wenzi2-lt .key-words-red{
+    color: #ea3e30;
+}
+
+/*大盒子*/
+#lunbotu-bigbox{
+    width: 632px;
+    height: 390px;
+    position: relative;
+    display: none;
+}
+/*叉叉*/
+#lunbotu-bigbox .chacha-box{
+    width: 50px;
+    height: 50px;
+    z-index: 2000;
+    position: absolute;
+    right: -45px;
+    top: 5px;;
+    background-image: url("../images/close-button-with-a-cross-in-a-circle_318-26587_r1_c1.jpg");
+    transition: 1s;
+}
+#lunbotu-bigbox .chacha-box:hover{
+    transition: 1s;
+    transform: rotateY(360deg) translate3d(0, 0, 0);
+    background-image: url("../images/close-red.jpg");
+}

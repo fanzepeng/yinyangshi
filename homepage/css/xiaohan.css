@@ -1,0 +1,214 @@
+
+
+/*banner部分开始*/
+
+#banner1{
+
+    height: 270px;
+}
+#banner1 .left-img{
+    width: 360px;
+    height: 270px;
+    float: left;
+
+}
+#banner1 .left-img .box{
+    width: 360px;
+    height: 270px;
+    overflow: hidden;
+    position: relative;
+}
+#banner1 .left-img .box ul{
+    position: absolute;
+    width: 3000px;
+}
+#banner1 .left-img .box li{
+    width: 360px;
+    height: 270px;
+    float: left;
+}
+#banner1 .left-img .box ol{
+    position: absolute;
+    left: 50%;
+    bottom:10px;
+    margin-left: -72px;
+}
+#banner1 .left-img .box ol li{
+    width: 8px;
+    height: 8px;
+    float: left;
+    margin-right: 6px;
+    border: 4px solid #DE7D6C;
+    border-radius: 50%;
+
+}
+.current{
+    background-color: #DE7D6C;
+}
+
+/*左边轮播图部分结束*/
+
+/*右边内容部分开始*/
+#banner1 .right-content{
+    margin-left: 39px;
+    width: 500px;
+    height: 270px;
+    float: left;
+}
+#banner1 .right-content .content-title{
+    padding-bottom: 3px;
+    border-bottom: 1px solid black;
+}
+#banner1 .right-content .content-title ul{
+    width: 480px;
+    padding-left: 20px;
+    height: 47px;
+    border-bottom: 2px solid black;;
+    
+}
+#banner1 .right-content .content-title ul li{
+    float: left;
+    /*position: relative;*/
+}
+#banner1 .right-content .content-title a{
+    font: 22px "微软雅黑";
+    color: black;
+    display:inline-block;
+    height: 35px;
+    line-height: 35px;
+    width: 74px;
+    margin-right: 15px;
+    position: relative;
+}
+#banner1 .right-content .content-title span{
+    display: block;
+    position: absolute;
+    top: 9px;
+    left: 0;
+    background:url("../images/index_z.png") no-repeat -1102px -331px;
+    width: 44px;
+    height: 30px;
+}
+
+#banner1 .right-content .content-title .bg1{
+    display: block;
+    position: absolute;
+    top: 9px;
+    left: 0;
+    background:url("../images/index_z.png") no-repeat -1102px -331px;
+    width: 44px;
+    height: 30px;
+}
+
+#banner1 .right-content .content-title .bg2{
+    display: block;
+    position: absolute;
+    top: 9px;
+    left: 0;
+    background:url("../images/index_z.png") no-repeat -1102px -472px;
+    width: 44px;
+    height: 30px;
+}
+#banner1 .right-content .content-title .bg3{
+    display: block;
+    position: absolute;
+    top: 9px;
+    left: 0;
+    background:url("../images/index_z.png") no-repeat  -1102px -551px;
+    width: 44px;
+    height: 30px;
+}
+#banner1 .right-content .content-title .bg4{
+    display: block;
+    position: absolute;
+    top: 9px;
+    left: 0;
+    background:url("../images/index_z.png") no-repeat -1102px -521px;
+    width: 44px;
+    height: 30px;
+}
+#banner1 .right-content .content-title .bg5{
+    display: block;
+    position: absolute;
+    top: 9px;
+    left: 0;
+    background:url("../images/index_z.png") no-repeat -1102px -441px;
+    width: 44px;
+    height: 30px;
+}
+#banner1 .right-content .content-title i{
+    display: block;
+    width: 17px;
+    height: 28px;
+    position: absolute;
+    top: 11px;
+    right: 0;
+    background:url("../images/index_z.png") no-repeat -1141px -100px;
+}
+
+#banner1 .right-content .content-title em{
+    position: absolute;
+    top: 9px;
+    left: -18px;
+    display: block;
+    width: 74px;
+    height: 33px;
+    border-radius: 20px;
+    background: rgb(104, 215, 252) none repeat scroll 0% 0%;
+    z-index: -1;
+    display: none;
+}
+
+
+
+    /*内容列表开始*/
+#banner1 .right-content .content-list{
+    width: 500px;
+
+
+
+}
+#banner1 .right-content .content-list .content-box{
+    width: 500px;
+    height: 206px;
+    overflow: hidden;
+    position: relative;
+}
+#banner1 .right-content .content-list .content-box .comment{
+    width: 4000px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 206px;
+}
+#banner1 .right-content .content-list .comment ul{
+    float: left;
+}
+#banner1 .right-content .content-list .comment li{
+    height: 40px;
+    width: 500px;
+    /*position: relative;*/
+    line-height: 40px;
+    border-bottom: 1px dotted black;
+}
+#banner1 .right-content .content-list .comment a{
+    display: block;
+    color: black;
+    font: 14px "微软雅黑";
+    float: left;
+    line-height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+#banner1 .right-content .content-list .comment a:hover{
+    color: #c1831c;
+}
+#banner1 .right-content .content-list .comment em{
+    float: right;
+    font-style: normal;
+    color: #bccddc;
+    font-size: 14px;
+    line-height: 40px;
+    font-weight: 400;
+}

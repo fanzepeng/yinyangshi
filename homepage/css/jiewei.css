@@ -1,0 +1,218 @@
+/*css初始化*/
+/*a{*/
+    /*text-decoration: none;*/
+    /*color: black;*/
+    /*font-family:"微软雅黑";*/
+    /*font-size: 16px;*/
+/*}*/
+
+
+/*结尾部分开始*/
+
+.erweima-nav{
+
+    margin-top: 100px;
+    width: 1310px;
+    position: relative;
+}
+.erweima-nav .left-logo{
+    width: 70px;
+    height: 199px;
+    float: left;
+    position: absolute;
+    left: 73px;
+    background:url("../images/logo_6c14ca6.png") no-repeat;
+}
+.erweima-nav .weibo{
+    float: left;
+    width: 270px;
+    padding-top: 20px;
+    height: 180px;
+    position: relative;
+    background:rgb(246, 246, 246);
+    margin-left:249px;
+}
+
+.erweima-nav  .p1{
+    position: absolute;
+    left: 22px;
+    display: inline-block;
+    width: 27px;
+    height: 107px;
+    line-height: 17px;
+    margin-left: 5px;
+}
+.erweima-nav  .p2{
+    position: absolute;
+    left: 57px;
+    display: inline-block;
+    width: 27px;
+    height: 17px;
+    line-height: 17px;
+    margin-left: 5px;
+}
+.erweima-nav .span1{
+    display: inline-block;
+    width: 24px;
+    height: 96px;
+    position: absolute;
+
+    left: 95px;
+    background:url("../images/index_z.png") no-repeat -862px -100px;
+    
+}
+.erweima-nav .span2{
+    display: inline-block;
+    width: 24px;
+    height: 96px;
+    position: absolute;
+
+    left: 95px;
+    background:url("../images/index_z.png") no-repeat -663px -151px;
+
+}
+.erweima-nav .shaoma{
+    width: 164px;
+    height: 148px;
+    /*line-height: 164px;*/
+    text-align: center;
+    padding-top: 16px;
+    border: 1px solid #c8d0d0;
+    position: absolute;
+    top: -80px;
+    right: -43px;
+}
+.erweima-nav .shaoma img{
+
+}
+
+.erweima-nav .line{
+    width: 52px;
+    height: 2px;
+    background-color: rgb(209, 209, 209);
+    display: block;
+    position: absolute;
+    bottom: 48px;
+    left: 27px;
+}
+.erweima-nav .neirong{
+    position: absolute;
+    bottom: 15px;
+    left: 25px;
+    /*width: 154px;*/
+    height: 19px;
+  
+}
+.erweima-nav .neirong .title{
+    font-size: 14px;
+}
+.erweima-nav .neirong .content{
+    font-size: 14px;
+    color: rgb(210, 193, 153);
+}
+.erweima-nav .weixin{
+    float: left;
+    width: 270px;
+    padding-top: 20px;
+    height: 180px;
+    position: relative;
+    background:rgb(246, 246, 246);
+    margin-left:119px;
+}
+
+.erweima-nav .service{
+    float: left;
+    width: 270px;
+    padding-top: 20px;
+    height: 180px;
+    position: relative;
+    background:#ffffff;
+    margin-left:128px;
+}
+.erweima-nav .service .phone{
+    position: absolute;
+    width: 111px;
+    height: 109px;
+    top: -32px;
+    left: 0px;
+    background:url("../images/index_z.png") no-repeat -663px -270px;
+}
+.erweima-nav .service .number{
+    font-size: 14px;
+    line-height: 22px;
+    margin-top: 68px;
+    font-family: Georgia,"Microsoft Yahei"
+}
+.erweima-nav .service .tel{
+    font-size: 14px;
+    line-height: 22px;
+    margin-top: 5px;
+    font-family: Georgia,"Microsoft Yahei"
+}
+
+
+
+
+.footer-bgc{
+    margin-top: 100px;
+    width: 1400px;
+    height: 703px;
+    position: relative;
+    background:url("../images/foot_f43f847.jpg") no-repeat;
+}
+.footer-bgc .footer-title{
+    width: 626px;
+    height: 62px;
+    position: absolute;
+    left: 50%;
+    margin-left: -313px;
+    top: 83px;
+    background: url("../images/index_z_605e763.png") no-repeat 0px -899px;
+}
+.footer-bgc .footer-top{
+    width: 166px;
+    height: 73px;
+    position: absolute;
+    left: 50%;
+    top: 156px;
+    margin-left: -83px;
+    background:url("../images/index_z_605e763.png") no-repeat -621px -692px;
+}
+.footer-bgc .footer-middle{
+    width: 74px;
+    height: 118px;
+    position: absolute;
+    left: 50%;
+    top: 218px;
+    margin-left: -39px;
+    background:url("../images/index_z_605e763.png") no-repeat -687px -151px;
+}
+.footer-bgc .hide-erweima{
+    position: absolute;
+    left: 50%;
+    margin-left: -76px;
+    top: 278px;
+    display: none;
+    
+}
+.footer-bgc .hide-erweima p{
+    display: block;
+    position: absolute;
+    top: -10px;
+    right: -45px;
+    width: 50px;
+    z-index: 1;
+    height: 182px;
+    background: url("../images/index_z_605e763.png") 0px -362px;
+}
+.footer-bgc .footer-bottom{
+    display: block;
+    width: 188px;
+    height: 208px;
+    position: absolute;
+    margin-left: -94px;
+    left: 50%;
+    top: 344px;
+    background:url("../images/index_z_605e763.png") no-repeat -475px 0px;
+
+}

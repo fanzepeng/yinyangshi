@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="icon" href="favicon.ico"/>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/xiaohan.css"/>
+    <link rel="stylesheet" href="css/index_z.css"/>
+    <script src="js/xiaohan.js"></script>
+    <script src="js/compatibility.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+        window.onload = function () {
+            function scrollText() {
+                var tb_right = document.getElementById('topBar_right');
+                var tb_a = tb_right.children[0];
+                var arr = ["网易秀品商城", "安卓充值9.8折", "网易严选大牌直供"];
+                var i = 0;
+                setText();
+                function setText() {
+                    setTimeout(function () {
+                        tb_a.innerHTML = arr[i % 3];
+                        tb_a.className = "none";
+                        i++;
+
+                        setTimeout(function () {
+                            tb_a.className = "fade2";
+                            setTimeout(function () {
+                                tb_a.className = "fade";
+                                setText();
+                            }, 4000);
+                        }, 100);
+                    }, 600);
+                }
+            }
+            scrollText();
+
+            function showTopMenu() {
+                var topMenu = document.getElementById("topBar_menu");
+                topMenu.onmouseover = function () {
+                    topMenu.style.height = "505px";
+                }
+                topMenu.onmouseout = function () {
+                    topMenu.style.height = "55px";
+                }
+            }
+            showTopMenu();
+
+            function showCosPlayer() {
+                var cosPlayer = document.getElementById("cosplayer");
+                var menu_more = document.getElementById("menu_more");
+                var menuBar = document.getElementById("menuBar");
+
+                cosPlayer.onmouseover = function () {
+                    menu_more.style.height = "174px";
+                    menu_more.children[0].style.opacity = 1;
+                    menuBar.style.background = "rgba(255,255,255,.9)";
+                }
+                menu_more.onmouseover = function () {
+                    menu_more.style.height = "174px";
+                    menu_more.children[0].style.opacity = 1;
+                    menuBar.style.background = "rgba(255,255,255,.9)";
+                }
+                cosPlayer.onmouseout = function () {
+                    menu_more.style.height = 0;
+                    menu_more.children[0].style.opacity = 0;
+                    if(menuBar.style.position=="absolute"){
+                        menuBar.style.background = "rgba(255,255,255,0)";
+                    };
+
+                }
+                menu_more.onmouseout = function () {
+                    menu_more.style.height = 0;
+                    menu_more.children[0].style.opacity = 0;
+                    if(menuBar.style.position=="absolute"){
+                        menuBar.style.background = "rgba(255,255,255,0)";
+                    };
+                }
+            }
+            showCosPlayer();
+
+            window.onscroll = function (){
+                var menuBar = document.getElementById("menuBar");
+                var leftPart = menuBar.children[0];
+                var scrollTop = scroll().scrollTop;
+                var topBar = document.getElementById("topBar");
+                var b_logo = document.getElementById("b_logo");
+
+                if(scrollTop>topBar.offsetHeight){
+                    menuBar.style.position = "fixed";
+                    menuBar.style.background = "rgba(255,255,255,0.9)";
+                    leftPart.style.opacity = "1";
+                    b_logo.style.transform="scale(0)";
+                    b_logo.style.opacity="0";
+                }else{
+                    menuBar.style.position = "absolute";
+                    menuBar.style.background = "rgba(255,255,255,0)";
+                    leftPart.style.opacity = "0";
+                    b_logo.style.transform="scale(1)";
+                    b_logo.style.opacity="1";
+                }
+            }
+
+            function startAnimate(){
+                var banner = document.getElementById("banner");
+                var divs = banner.children;
+                for(var i=0;i<divs.length-1;i++){
+                    divs[i].className= divs[i].className+" animate";
+                }
+            }
+            startAnimate();
+
+            function openSeverPop(){
+                var openPop = document.getElementById("open_pop");
+                var serverPop = document.getElementById("sever_pop");
+                openPop.onclick = function(){
+                    serverPop.style.opacity = "1";
+                    serverPop.style.transform="scale(1)";
+                }
+                serverPop.onclick = function(){
+                    serverPop.style.opacity = "0";
+                    serverPop.style.transform="scale(0)";
+                }
+            }
+            openSeverPop();
+
+            //功能1：左边轮播图
+            (function(){
+                //1.找对象
+                var div=document.getElementById("img-box");
+                var ul=div.children[0];
+                var ulLis=ul.children;
+                var ol=div.children[1];
+                var imgWidth=div.offsetWidth;
+                //2.动态创建小方块
+                for(var i=0;i<ulLis.length;i++){
+                    var li=document.createElement("li");
+                    ol.appendChild(li);
+                }
+                //3.生成假图片
+                var clone=ulLis[0].cloneNode(true);
+                ul.appendChild(clone);
+
+                //4.鼠标移动到小方块，显示对应的图片
+                var olLis=ol.children;
+                ol.children[0].className="current";
+                for(var i=0;i<olLis.length;i++){
+                    olLis[i].index=i;
+                    olLis[i].onmouseover= function () {
+                        for(var i=0;i<olLis.length;i++){
+                            olLis[i].className="";
+                        }
+                        this.className="current";
+                        var idx=this.index;
+                        var target=-idx*imgWidth;
+                        animate(ul,target);
+                        pic=square=idx;
+                    }
+                }
+
+                div.onmouseover = function () {
+                    clearInterval(timer);
+                }
+                div.onmouseout = function () {
+                    timer = setInterval(move,2000);
+                }
+
+                //5.加定时器，图片自动跳转
+                var square = 0;
+                var pic = 0;
+                timer = setInterval(move, 2000);
+                function move() {
+                    if (pic == ulLis.length -1) {
+                        ul.style.left = "0px";
+                        pic = 0;
+                    }
+                    pic++;
+                    animate(ul, -pic * imgWidth);
+                    if (square == olLis.length - 1) {
+                        square = 0;
+                    } else {
+                        square++;
+                    }
+                    for (var i = 0; i < olLis.length; i++) {
+                        olLis[i].className = "";
+
+                    }
+                    olLis[square].className = "current";
+                }
+            })();
+            //功能2：点击title部分，内容部分移动
+            (function (){
+                //1.找对象
+                var uls=document.getElementById("title");
+                var lis=uls.children;//伪数组
+                var divs=document.getElementById("content");
+                var ulList=divs.children;//伪数组
+                var width=ulList[0].offsetWidth;
+
+                //2.给上边的li注册点击事件，排他，让下面的内容显示
+                for(var i=0;i<lis.length;i++){
+                    lis[i].index=i;
+                    lis[i].onmouseover= function () {
+                        for(var i=0;i<lis.length;i++) {
+                            var l = this.index;
+                            animate(divs,-l*width);
+                        }
+
+                       this.children[0].children[2].style.display="block";
+                    }
+
+
+
+                    lis[i].onmouseout= function () {
+                        this.children[0].children[2].style.display="none";
+                    }
+                }
+            })();
+
+            //zaihuaihai的函数
+            (function (){
+                var strategy=document.getElementById("strategy");
+                var strategyTabs=strategy.children[0];
+                var as=strategyTabs.getElementsByTagName("a");
+                var strategyList=strategy.children[1];
+                var uls=strategyList.children;
+                for(var i=0;i<as.length;i++){
+                    as[i].index=i;
+                    as[i].onmouseover= function () {
+                        for(var i=0;i<uls.length;i++){
+                            animate_z(uls[i],{"opacity":0,"zIndex":1});
+                        }
+                        var idx=this.index;
+                        animate_z(uls[idx],{"opacity":1,"zIndex":3});
+                    }
+                }
+
+            })();
+        }
+    </script>
+</head>
+<body>
+<!--topBar 开始-->
+<div id="topBar" class="topBar">
+    <div class="w">
+        <a href="javascript:void(0);" class="topBar_logo">网易游戏</a>
+
+        <div class="topBar_middle">
+            <a href="javascript:void(0);">注册帐号</a>
+            <a href="javascript:void(0);">安卓充值</a>
+        </div>
+        <div class="topBar_right" id="topBar_right">
+            <a href="javascript:void(0);" class="fade">网易严选大牌直供</a>
+            <!--网易秀品商城、安卓充值9.8折、网易严选大牌直供-->
+        </div>
+        <div class="topBar_menu" id="topBar_menu">
+            <span>
+                网易游戏全目录
+                <em class="topBar_icon"><i></i></em>
+            </span>
+
+            <div class="menu_table">
+                <ul class="menu_nav clearfix">
+                    <li style="width: 247px;"><b>客户端游戏</b></li>
+                    <li style="width: 603px;"><b>手机游戏</b></li>
+                    <li style="width: 147px;" class="last_th"><b>游戏辅助</b></li>
+                </ul>
+                <ul class="menu_list">
+                    <li class="menu_list1" style="width: 233px;">
+                        <p>角色扮演</p>
+                        <a href="javascript:void(0);" target="_top"><em class="topBar_1st">梦幻西游电脑版</em></a>
+                        <a href="javascript:void(0);" target="_top"><em class="topBar_hot">天下3</em></a>
+                        <a href="javascript:void(0);" target="_top"><em class="topBar_hot">大话2经典版</em></a>
+                        <a href="javascript:void(0);" target="_top"><em class="topBar_new">天谕</em></a>
+                        <a href="javascript:void(0);" target="_top">大话2免费版</a>
+                        <a href="javascript:void(0);" target="_top"><em class="topBar_new">西楚霸王</em></a>
+                        <a href="javascript:void(0);" target="_top">新大话3经典版</a>
+                        <a href="javascript:void(0);" target="_top"><em class="topBar_new">新倩女幽魂</em></a>
+                        <a href="javascript:void(0);" target="_top">新大话3免费版</a>
+                        <a href="javascript:void(0);" target="_top">镇魔曲</a>
+                        <a href="javascript:void(0);" target="_top">大唐无双零</a>
+                        <a href="javascript:void(0);" target="_top">龙魂时刻</a>
+                        <a href="javascript:void(0);" target="_top">武魂2</a>
+                        <a href="javascript:void(0);" target="_top">精灵传说</a>
+                        <a href="javascript:void(0);" target="_top">斩魂</a>
+                        <a href="javascript:void(0);" target="_top">新飞飞</a>
+                        <a href="javascript:void(0);" target="_top">魔兽世界</a>
+                        <a href="javascript:void(0);" target="_top">暗黑破坏神3</a>
+
+                        <p style="margin-top: 2px;">竞技/休闲</p>
+                        <a href="javascript:void(0);" target="_top"><em class="topBar_new">守望先锋</em></a>
+                        <a href="javascript:void(0);" target="_top"><em class="topBar_new">突击英雄</em></a>
+                        <a href="javascript:void(0);" target="_top"><em class="topBar_new">夺宝联盟</em></a>
+                        <a href="javascript:void(0);" target="_top"><em class="topBar_new">无尽战区</em></a>
+                        <a href="javascript:void(0);" target="_top"><em class="topBar_new">战意</em></a>
+                        <a href="javascript:void(0);" target="_top">战网</a>
+                        <a href="javascript:void(0);" target="_top">风暴英雄</a>
+                        <a href="javascript:void(0);" target="_top">星际争霸Ⅱ</a>
+                        <a href="javascript:void(0);" target="_top">英雄三国</a>
+                        <a href="javascript:void(0);" target="_top">炉石传说</a>
+                    </li>
+                    <li class="menu_list2" style="width: 143px;margin-left: 15px">
+                        <p>热门推荐</p>
+                        <a href="javascript:void(0);" target="_top"><em class="topBar_hot">梦幻西游手游</em></a>
+                        <a href="javascript:void(0);" target="_top"><em class="topBar_hot">大话西游手游</em></a>
+                        <a href="javascript:void(0);" target="_top"><em class="topBar_hot">倩女幽魂手游</em></a>
+                        <a href="javascript:void(0);" target="_top"><em class="topBar_hot">阴阳师</em></a>
+                        <a href="javascript:void(0);" target="_top"><em class="topBar_hot">率土之滨</em></a>
+                        <a href="javascript:void(0);" target="_top"><em class="topBar_hot">Raven：掠夺者</em></a>
+                        <a href="javascript:void(0);" target="_top"><em class="topBar_hot">功夫熊猫3手游</em></a>
+                        <a href="javascript:void(0);" target="_top"><em class="topBar_hot">乱斗西游2</em></a>
+                        <a href="javascript:void(0);" target="_top"><em class="topBar_hot">梦幻西游无双版</em></a>
+                        <a href="javascript:void(0);" target="_top">西游神魔决</a>
+                        <a href="javascript:void(0);" target="_top">时空之刃</a>
+                        <a href="javascript:void(0);" target="_top">梦想星城</a>
+                        <a href="javascript:void(0);" target="_top">乖离性百万亚瑟王</a>
+                        <a href="javascript:void(0);" target="_top">百将行</a>
+                        <a href="javascript:void(0);" target="_top">有杀气童话</a>
+                    </li>
+                    <li class="menu_list3" style="width: 416px;position: relative">
+                        <p>新品推荐</p>
+
+                        <div id="NIE-list-news">
+
+                            <div style="width: 133px;float: left" class="long-news">
+                                <a href="javascript:void(0);" target="_top"><em class="topBar_new">天下手游</em></a>
+                                <a href="javascript:void(0);" target="_top"><em class="topBar_new">Minecraft我的世界</em></a>
+                                <a href="javascript:void(0);" target="_top"><em class="topBar_new">HIT:我守护的一切</em></a>
+                                <a href="javascript:void(0);" target="_top"><em class="topBar_new">终结者2官方手游</em></a>
+                                <a href="javascript:void(0);" target="_top"><em class="topBar_new">大话西游热血版</em></a>
+                                <a href="javascript:void(0);" target="_top"><em class="topBar_new">小李飞刀</em></a>
+                                <a href="javascript:void(0);" target="_top"><em class="topBar_new">曙光先锋</em></a>
+                                <a href="javascript:void(0);" target="_top"><em class="topBar_new">大唐游仙记</em></a>
+                                <a href="javascript:void(0);" target="_top"><em class="topBar_new">魔法禁书目录</em></a>
+                                <a href="javascript:void(0);" target="_top"><em class="topBar_new">三少爷的剑</em></a>
+                                <a href="javascript:void(0);" target="_top"><em class="topBar_new">我朝有马</em></a>
+                                <a href="javascript:void(0);" target="_top"><em class="topBar_new">异次元战姬</em></a>
+                                <a href="javascript:void(0);" target="_top"><em class="topBar_new">永远的7日之都</em></a>
+                                <a href="javascript:void(0);" target="_top">功夫熊猫官方手游</a>
+                                <a href="javascript:void(0);" target="_top">猫和老鼠官方手游</a>
+                            </div>
+
+                            <div style="width: 106px;float: left" class="short-news">
+                                <a href="javascript:void(0);" target="_top"><em class="topBar_new">大航海之路</em></a>
+                                <a href="javascript:void(0);" target="_top"><em class="topBar_new">童话大冒险</em></a>
+                                <a href="javascript:void(0);" target="_top"><em class="topBar_new">陆小凤传奇</em></a>
+                                <a href="javascript:void(0);" target="_top"><em class="topBar_new">劲舞团</em></a>
+                                <a href="javascript:void(0);" target="_top"><em class="topBar_new">黑暗启元</em></a>
+                                <a href="javascript:void(0);" target="_top"><em class="topBar_new">大富翁9</em></a>
+                                <a href="javascript:void(0);" target="_top"><em class="topBar_new">永恒文明</em></a>
+                                <a href="javascript:void(0);" target="_top"><em class="topBar_new">魂之幻影</em></a>
+                                <a href="javascript:void(0);" target="_top"><em class="topBar_new">皇牌机娘</em></a>
+                                <a href="javascript:void(0);" target="_top"><em class="topBar_new">无限战争</em></a>
+                                <a href="javascript:void(0);" target="_top"><em class="topBar_new">光明大陆</em></a>
+                                <a href="javascript:void(0);" target="_top">貂蝉的移动城堡</a>
+                                <a href="javascript:void(0);" target="_top">小时代官方游戏</a>
+                                <a href="javascript:void(0);" target="_top">妖刀少女异闻录</a>
+                                <a href="javascript:void(0);" target="_top">泡泡喵海岛历险</a>
+                            </div>
+
+                            <div style="width: 90px;float: left" class="mini-news">
+                                <a href="javascript:void(0);" target="_top">狩猎纪元</a>
+                                <a href="javascript:void(0);" target="_top">秘宝猎人</a>
+                                <a href="javascript:void(0);" target="_top">格罗亚传奇</a>
+                                <a href="javascript:void(0);" target="_top">无限幻斗</a>
+                                <a href="javascript:void(0);" target="_top">勇士x勇士</a>
+                                <a href="javascript:void(0);" target="_top">倩女幽魂录</a>
+                                <a href="javascript:void(0);" target="_top">永恒边境</a>
+                                <a href="javascript:void(0);" target="_top">元气战姬学院</a>
+                                <a href="javascript:void(0);" target="_top">无尽神域</a>
+                                <a href="javascript:void(0);" target="_top">镇魔曲手游</a>
+                                <a href="javascript:void(0);" target="_top">大唐无双手游</a>
+                                <a href="javascript:void(0);" target="_top">飞刀又见飞刀</a>
+                                <a href="javascript:void(0);" target="_top">萌王EX</a>
+                                <a href="javascript:void(0);" target="_top">天下HD</a>
+                                <a href="javascript:void(0);" target="_top">天下X天下</a>
+                            </div>
+
+                        </div>
+
+                        <a href="javascript:void(0)" hidefocus="true" class="topBar_more" id="topBar_more">更多热门手游</a>
+                    </li>
+                    <li class="menu_list4" style="width: 134px; border-right: 0px none;">
+                        <a href="javascript:void(0);" target="_top"><em class="topBar_hot">网易游戏app</em></a>
+                        <a href="javascript:void(0);" target="_top"><em class="topBar_hot">游品位</em></a>
+                        <a href="javascript:void(0);" target="_top"><em class="topBar_hot">网易MuMu</em></a>
+                        <a href="javascript:void(0);" target="_top">网易游戏印象</a>
+                        <a href="javascript:void(0);" target="_top">网易游戏助手</a>
+                        <a href="javascript:void(0);" target="_top">网易游戏平台</a>
+                        <a href="javascript:void(0);" target="_top"><em class="topBar_new">游戏论坛app</em></a>
+                        <a href="javascript:void(0);" target="_top">手机将军令</a>
+                        <a href="javascript:void(0);" target="_top">将军令</a>
+                        <a href="javascript:void(0);" target="_top">游戏知道</a>
+                        <a href="javascript:void(0);" target="_top">藏宝阁</a>
+                        <a href="javascript:void(0);" target="_top">网易CC</a>
+                        <a href="javascript:void(0);" target="_top">客服中心</a>
+                        <a href="javascript:void(0);" target="_top">自助百宝箱</a>
+                        <a href="javascript:void(0);" target="_top">网易UU加速器</a>
+                        <a class="topBar_btn" href="javascript:void(0);" target="_top">网易游戏</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--topBar 结束-->
+
+<!--main 开始-->
+<div class="main">
+    <div id="menuBar" class="top_menu">
+        <div class="left_part">
+            <p>扫码下载</p>
+            <img src="qr" alt=""/>
+            <a class="logo_wrap" href="javascript:void(0);" target="_top">
+                <span class="logo_icon"></span>
+                <div class="game_name">
+                    <h3>阴阳师</h3>
+                    <p>网易和风匠心巨制</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="right_part">
+            <ul>
+                <li class="rightPart_li"><a class="nav_item" href="javascript:void(0);">官网首页</a><span class="line"></span></li>
+                <li class="rightPart_li"><a class="nav_item" href="javascript:void(0);">新闻资讯</a><span class="line"></span></li>
+                <li class="rightPart_li"><a class="nav_item" href="javascript:void(0);">游戏攻略</a><span class="line"></span></li>
+                <li class="rightPart_li"><a class="nav_item" href="javascript:void(0);">游戏特色</a><span class="line"></span></li>
+                <li id="cosplayer" class="rightPart_li"><a class="nav_item" href="javascript:void(0);">同人专区<em class="arrow"></em></a><span class="line"></span></li>
+                <li class="rightPart_li"><a class="nav_item" href="javascript:void(0);">官方渠道<em class="arrow"></em></a></li>
+            </ul>
+
+        </div>
+
+        <div class="menu_more" id="menu_more">
+            <div class="tongren">
+                <a href="javascript:void(0);" class="list_item" target="_blank">
+				<span class="inner_item">
+					<span class="pic gaoshou"></span>
+					<span class="name">高手在民间</span>
+				</span>
+                </a>
+
+                <a href="javascript:void(0);" class="list_item" target="_blank">
+				<span class="inner_item">
+					<span class="pic cos"></span>
+					<span class="name">玩家COS</span>
+				</span>
+                </a>
+                <a href="javascript:void(0);" class="list_item firstone" target="_blank">
+				<span class="inner_item">
+					<span class="pic huihua"></span>
+					<span class="name">同人绘画</span>
+				</span>
+                </a>
+            </div>
+            <!--<div class="qudao"></div>-->
+        </div>
+    </div>
+    <!--banner 开始-->
+    <div id="banner" class="banner">
+        <div class="qingming">
+            <img src="images/qingmin_5e1c3bc.png" alt=""/>
+        </div>
+        <div class="shenle">
+            <img src="images/shenle_77d66bd.png" alt=""/>
+        </div>
+        <div class="logo">
+            <a href="javascript:void(0);">
+                <img id="b_logo" src="images/logo_6c14ca6.png" alt=""/>
+            </a>
+        </div>
+        <div class="slogon">
+            <img src="images/slogon_fb1e8a7.png" alt=""/>
+        </div>
+        <div id="open_pop" class="open_sever_pop">
+            <a href="javascript:void(0)">
+                <img src="images/bunny_cc1e937.gif" alt=""/>
+            </a>
+        </div>
+    </div>
+    <!--banner 开始-->
+    <div class=news_section>
+        <div id="banner1" class="clearfix">
+            <!--左边轮播图-->
+            <div class="left-img">
+                <div class="box" id="img-box">
+                    <ul>
+                        <li><img src="images/1.jpg" alt=""/></li>
+                        <li><img src="images/2.jpg" alt=""/></li>
+                        <li><img src="images/3.jpg" alt=""/></li>
+                        <li><img src="images/4.jpg" alt=""/></li>
+                        <li><img src="images/5.jpg" alt=""/></li>
+                        <li><img src="images/6.jpg" alt=""/></li>
+                    </ul>
+
+                    <ol>
+                    </ol>
+                </div>
+            </div>
+            <!--右边内容-->
+            <div class="right-content clearfix">
+                <!--nav导航部分-->
+                <div class="content-title clearfix">
+                    <ul id="title">
+                        <li><a href=""><span class="bg1"></span><i></i><em></em></a></li>
+                        <li><a href=""><span class="bg2"></span><i></i><em></em></a></li>
+                        <li><a href=""><span class="bg3"></span><i></i><em></em></a></li>
+                        <li><a href=""><span class="bg4"></span><i></i><em></em></a></li>
+                        <li><a href=""><span class="bg5"></span><i></i><em></em></a></li>
+                    </ul>
+                </div>
+                <!--内容列表-->
+                <div class="content-list">
+                    <div class="content-box">
+                        <div class="comment" id="content">
+                            <ul >
+                                <li><a href="#" >-【新闻】 寮里来了两个新的小哥哥——新式神CV大猜想</a><em>2016-10-25</em></li>
+                                <li><a href="#">-【新闻】 《阴阳师》玩家团队招募（扫地工，快到碗里来）</a><em>2016-10-25</em></li>
+                                <li><a href="#" >-【公告】 关于前段时间阴阳寮狩猎战漏洞处理公告</a><em>2016-10-25</em></li>
+                                <li><a href="#" >-【新闻】 悠游日本和风行 《阴阳师》奇幻之旅完满收官</a><em>2016-10-25</em></li>
+                                <li><a href="#">-【三石精选】 把你的女朋友变为完美公主</a><em>2016-10-25</em></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#">-【新闻】 寮里来了两个新的小哥哥——新式神CV大猜想</a><em>2016-10-25</em></li>
+                                <li><a href="#">-【新闻】 《阴阳师》玩家团队招募（扫地工，快到碗里来）</a><em>2016-10-25</em></li>
+                                <li><a href="#">-【新闻】 悠游日本和风行 《阴阳师》奇幻之旅完满收官</a><em>2016-10-25</em></li>
+                                <li><a href="#">-【新闻】 结界收益最大化 《阴阳师》结界攻守战</a><em>2016-10-25</em></li>
+                                <li><a href="#">-【新闻】 战场上的雇佣兵！《阴阳师》手游御魂系统</a><em>2016-10-25</em></li>
+
+                            </ul>
+                            <ul>
+                                <li><a href="#">-【公告】 关于前段时间阴阳寮狩猎战漏洞处理公告</a><em>2016-10-25</em></li>
+                                <li><a href="#">-【公告】 10月20日服务器维护公告</a><em>2016-10-25</em></li>
+                                <li><a href="#">-【公告】 10月13日服务器维护公告通知</a><em>2016-10-25</em></li>
+                                <li><a href="#">-【公告】 服务器完成二次扩容，火爆服重开新建角色功能</a><em>2016-10-25</em></li>
+                                <li><a href="#">-【公告】 关于部分服务器在登陆界面出现丢失及反复更新的故障</a><em>2016-10-25</em></li>
+
+                            </ul>
+                            <ul>
+                                <li><a href="#">-【活动】 唯美和风奇幻之旅の日本行</a><em>2016-10-25</em></li>
+                                <li><a href="#">-【活动】 六大平台同步直播！丁磊《阴阳师》欧非大试炼</a><em>2016-10-25</em></li>
+                                <li><a href="#">-【活动】 你来COS我来赞！《阴阳师》×GACHA同人大赛开启</a><em>2016-10-25</em></li>
+                                <li><a href="#">-【活动】 同人作品大征集！《阴阳师》联手半次元送豪礼</a><em>2016-10-25</em></li>
+                                <li><a href="#">-【活动】 和风品鉴之旅！《阴阳师》邀玩家同游日本</a><em>2016-10-25</em></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#">-【媒体】 【狮吼】“狮吼直播”开展《阴阳师》主播体验活动</a><em>2016-10-25</em></li>
+                                <li><a href="#">-【媒体】 【17173】阴阳师妖刀姬值得培养吗 妖刀姬技能介绍</a><em>2016-10-25</em></li>
+                                <li><a href="#">-【媒体】 【游民星空】阴阳师平民童男复活流高分阵容搭配推荐</a><em>2016-10-25</em></li>
+                                <li><a href="#">-【媒体】 【游民星空】阴阳师手游群控式神推荐及打法教学 </a><em>2016-10-25</em></li>
+                                <li><a href="#">-【媒体】 【17173】阴阳师狩猎战怎么玩 狩猎战奖励是什么</a><em>2016-10-25</em></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--<div class="sidebar">
+
+    </div>-->
+    <!--阴阳师侧边广告栏开始-->
+    <div class="index_side_bar">
+        <em class="arrow"></em>
+        <h3 class="sidebar_title"></h3>
+        <div class="link_list clearfix">
+            <a href="javascript:void(0)" target="_top" alt="阴阳师手账——游戏日历表 斗技" class="icon1 odd"></a>
+            <a href="javascript:void(0)" target="_top" alt="阴阳师手账——游戏日历表 退妖怪退治" class="icon2 eve"></a>
+            <a href="javascript:void(0)" target="_top" alt="阴阳师手账——游戏日历表" class="icon3 odd"></a>
+            <a href="javascript:void(0)" target="_top" alt="阴阳师手账——游戏日历表" class="icon4 eve"></a>
+            <a href="javascript:void(0)" target="_top" alt="阴阳师手账——游戏日历表" class="icon5 odd"></a>
+            <a href="javascript:void(0)" target="_top" alt="阴阳师手账——游戏日历表" class="icon6 eve"></a>
+            <a href="javascript:void(0)" target="_top" alt="阴阳师手账——游戏日历表" class="icon7 odd"></a>
+            <a href="javascript:void(0)" target="_top" alt="阴阳师手账——游戏日历表" class="icon8 eve" style="display: none;"></a>
+        </div>
+    </div>
+    <!--阴阳师侧边广告栏结束-->
+    <div class="strategy_section" id="strategy">
+        <!--攻略章节头部导航栏-->
+        <div style="background: #ffffff">
+            <div class="strategy_tabs">
+            <div class="tab_name"></div>
+            <span class="sperate_dot"></span>
+            <a href="javascript:void(0);" class="xinshou">
+                <span></span>
+                <em></em>
+            </a>
+            <span class="sperate_dot"></span>
+            <a href="javascript:void(0);" class="rumen">
+                <span></span>
+                <em></em>
+            </a>
+            <span class="sperate_dot"></span>
+            <a href="javascript:void(0);" class="jinjie">
+                <span></span>
+                <em></em>
+            </a>
+            <span class="sperate_dot"></span>
+            <a href="javascript:void(0);" class="more">
+                <span></span>
+                <em></em>
+            </a>
+
+        </div>
+        </div>
+        <!--攻略章节列表栏-->
+        <div class="strategy_list">
+            <ul class="list show">
+                <li>
+                    <span class="seperate_line"></span>
+                    <a target="_top" href="#" class="strategy_item">
+                        <img src="images/1_1.png" alt="阴阳师新手指南 阴阳师新手攻略">
+                        <span class="pic_circle"></span>
+                    </a>
+                </li>
+                <li>
+                    <span class="seperate_line"></span>
+                    <a target="_top" href="#" class="strategy_item">
+                        <img src="images/1_2.png" alt=" 阴阳师攻略 阴阳师萌新术语录">
+                        <span class="pic_circle"></span>
+                    </a>
+                </li>
+                <li>
+                    <span class="seperate_line"></span>
+                    <a target="_top" href="#" class="strategy_item">
+                        <img src="images/1_3.png"  alt="阴阳师手游UI界面介绍">
+                        <span class="pic_circle"></span>
+                    </a>
+                </li>
+                <li>
+                    <span class="seperate_line"></span>
+                    <a target="_top" href="#" class="strategy_item">
+                        <img src="images/1_4.png" alt="阴阳师 式神百科 组队SR收集攻略">
+                        <span class="pic_circle"></span>
+                    </a>
+                </li>
+                <li>
+                    <span class="seperate_line"></span>
+                    <a target="_top" href="#" class="strategy_item">
+                        <img src="images/1_5.png" alt="阴阳师手游战斗系统介绍">
+                        <span class="pic_circle"></span>
+                    </a>
+                    <span class="seperate_line_right"></span>
+                </li>
+            </ul>
+            <ul class="list">
+                <li>
+                    <span class="seperate_line"></span>
+                    <a target="_top" href="#" class="strategy_item">
+                        <img  alt="阴阳天机谱 为什么要抱大腿">
+                        <span class="pic_circle"></span>
+                    </a>
+                </li>
+                <li>
+                    <span class="seperate_line"></span>
+                    <a target="_top" href="#" class="strategy_item">
+                        <img  alt="阴阳师手游 新手指南 萌新向大型生存戦略">
+                        <span class="pic_circle"></span>
+                    </a>
+                </li>
+                <li>
+                    <span class="seperate_line"></span>
+                    <a target="_top" href="#" class="strategy_item">
+                        <img  alt="阴阳师新手升级技巧">
+                        <span class="pic_circle"></span>
+                    </a>
+                </li>
+                <li>
+                    <span class="seperate_line"></span>
+                    <a target="_top" href="#" class="strategy_item">
+                        <img  alt="《阴阳师》体力消耗与产出方式介绍">
+                        <span class="pic_circle"></span>
+                    </a>
+                </li>
+                <li>
+                    <span class="seperate_line"></span>
+                    <a target="_top" href="#" class="strategy_item">
+                        <img  alt="阴阳师 阴阳寮（公会）攻略">
+                        <span class="pic_circle"></span>
+                    </a>
+                    <span class="seperate_line_right"></span>
+                </li>
+            </ul>
+            <ul class="list">
+                <li>
+                    <span class="seperate_line"></span>
+                    <a target="_top" href="#" class="strategy_item">
+                        <img src="" alt="让你的式神有个质的飞跃">
+                        <span class="pic_circle"></span>
+                    </a>
+                </li>
+                <li>
+                    <span class="seperate_line"></span>
+                    <a target="_top" href="#" class="strategy_item">
+                        <img src="" alt="御魂系统详解">
+                        <span class="pic_circle"></span>
+                    </a>
+                </li>
+                <li>
+                    <span class="seperate_line"></span>
+                    <a target="_top" href="#" class="strategy_item">
+                        <img src="" alt="【式神百科】PVP式神的选择">
+                        <span class="pic_circle"></span>
+                    </a>
+                </li>
+                <li>
+                    <span class="seperate_line"></span>
+                    <a target="_top" href="#" class="strategy_item">
+                        <img src="" alt="力战八岐大蛇！阴阳师手游御魂副本1-4层攻略">
+                        <span class="pic_circle"></span>
+                    </a>
+                </li>
+                <li>
+                    <span class="seperate_line"></span>
+                    <a target="_top" href="#" class="strategy_item">
+                        <img src=" " alt="阴阳师手游PVP向攻略 常见套路全解析">
+                        <span class="pic_circle"></span>
+                    </a>
+                    <span class="seperate_line_right"></span>
+                </li>
+            </ul>
+            <ul class="more">
+                <li><a href="#" target="_top" title="莹草御魂适用性讨论">
+                    <p><i></i><span>【御魂】 莹草御魂适用性讨论</span></p>
+                    <em>2016-10-14</em>
+                </a></li>
+                <li><a href="#" target="_top" title="从入门到进阶（上）">
+                    <p><i></i><span>【新手】 从入门到进阶（上）</span></p>
+                    <em>2016-10-14</em>
+                </a></li>
+                <li><a href="#" target="_top" title="高速络新妇的日常">
+                    <p><i></i><span>【式神】 高速络新妇的日常</span></p>
+                    <em>2016-10-14</em>
+                </a></li>
+                <li><a href="#" target="_top" title="天下武功，唯快不破——贫民玩家单兵佣上分之路">
+                    <p><i></i><span>【式神】 天下武功，唯快不破——贫民玩家单兵佣上分之路</span></p>
+                    <em>2016-10-14</em>
+                </a></li>
+                <li><a href="#" target="_top" title="妖刀姬——最强SSR式神？">
+                    <p><i></i><span>【式神】 妖刀姬——最强SSR式神？</span></p>
+                    <em>2016-10-14</em>
+                </a></li>
+                <li><a href="#" target="_top" title="病娇的逆袭~傀儡师全方位攻略">
+                    <p><i></i><span>【式神】 病娇的逆袭~傀儡师全方位攻略</span></p>
+                    <em>2016-10-14</em>
+                </a></li>
+                <li><a href="#" target="_top" title="斗技套路与反套路">
+                    <p><i></i><span>【式神】 斗技套路与反套路</span></p>
+                    <em>2016-10-14</em>
+                </a></li>
+                <li><a href="#" target="_top" title="悬赏封印快速解决战斗指南">
+                    <p><i></i><span>【新手】 悬赏封印快速解决战斗指南</span></p>
+                    <em>2016-10-14</em>
+                </a></li>
+                <li><a href="#" target="_top" title="PVP速攻套路详解">
+                    <p><i></i><span>【式神】 PVP速攻套路详解</span></p>
+                    <em>2016-10-14</em>
+                </a></li>
+                <li><a href="#" target="_top" title="难寻昔日的荣光——控制类式神浅析">
+                    <p><i></i><span>【式神】 难寻昔日的荣光——控制类式神浅析</span></p>
+                    <em>2016-10-14</em>
+                </a></li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+<!--main 结束-->
+
+<!--pop_mask 开始-->
+<div id="sever_pop" class="sever_pop">
+    <img src="images/pop_sever.png" alt=""/>
+</div>
+<!--pop_mask 结束-->
+<!--footer开始-->
+<div class="footer">
+    <div class="w">
+        <div class="share">
+            <span>分享到：</span>
+            <a target="_self" href="javascript:void(0);"><span class="iconfont">&#xe606;</span><em>微信</em></a>
+            <a target="_self" href="javascript:void(0);"><span class="iconfont">&#xe607;</span><em>易信</em></a>
+            <a target="_self" href="javascript:void(0);"><span class="iconfont">&#xe604;</span><em>新浪微博</em></a>
+            <a target="_self" href="javascript:void(0);"><span class="iconfont">&#xe602;</span><em>QQ空间</em></a>
+            <a target="_self" href="javascript:void(0);"><span class="iconfont">&#xe605;</span><em>腾讯微博</em></a>
+            <a target="_self" href="javascript:void(0);"><span class="iconfont">&#xe601;</span><em>更多</em></a>
+        </div>
+        <div class="copyright">
+            <span style="float:left;margin-top: 8px;">
+                <a href="javascript:void(0);" target="_blank" style="width:118px;height:31px;padding-right:0;display:inline-block;cursor:pointer;background:url(images/netease.2.png) no-repeat"></a>
+                <a href="javascript:void(0);" target="_blank" style="width:134px;height:31px;padding-right:15px;display:inline-block;cursor:pointer;background:url(images/nie.2.png) no-repeat"></a>
+            </span>
+            <div style="float: left;width: 600px">
+                <p>
+                    <a href="javascript:void(0);" target="_top">公司简介</a> - <a href="javascript:void(0);" target="_top">客户服务</a> - <a href="javascript:void(0);" target="_top">相关法律</a> - <a href="javascript:void(0);" target="_top">网易游戏</a> - <a href="javascript:void(0);" target="_top">联系我们</a> - <a href="javascript:void(0);" target="_top">商务合作</a> - <a href="javascript:void(0);" target="_top">加入我们</a> - <a href="javascript:void(0);" target="_top">用户协议</a>
+                </p>
+                <p>
+                    网易公司版权所有 ©1997-2016&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;粤网文[2014]0636-236号
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--footer结束-->
+
+
+</body>
+</html>

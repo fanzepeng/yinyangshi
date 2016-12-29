@@ -1,0 +1,351 @@
+/*阴阳师侧边广告栏开始*/
+
+.index_side_bar {
+    z-index: 10;
+    position: absolute;
+    width: 707px;
+    height: 1181px;
+    background: transparent url("../images/side_bg_b6e5758.png") no-repeat scroll center bottom;
+    left: 50%;
+    margin-left: 242px;
+    top: 345px; }
+.index_side_bar .sidebar_title {
+    position: absolute;
+    width: 321px;
+    height: 168px;
+    top: 59px;
+    left: 25px;
+    background-repeat: no-repeat;
+    background: url("../images/index_z_a4d5870.png")-306px -362px;
+}
+.index_side_bar .arrow {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    z-index: 20;
+    top: 140px;
+    left: 0px;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid rgb(254, 227, 0);
+}
+.index_side_bar .link_list {
+    width: 346px;
+    padding-top: 222px;
+}
+.index_side_bar .link_list a {
+    display: block;
+    width: 298px;
+    height: 100px;
+    transition: all 0.2s linear 0s;
+    background-repeat: no-repeat;
+    background: url("../images/index_z_a4d5870.png") -862px 0px;
+}
+.index_side_bar .link_list a:hover {
+    transform: translate3d(15px, 0px, 0px);
+}
+.index_side_bar .link_list a.odd {
+    float: left;
+    margin-left: 28px;
+    background: url("../images/index_z_a4d5870.png") -862px 0px;
+}
+.index_side_bar .link_list a.eve {
+    float: right;
+    margin-right: 28px;
+
+}
+.index_side_bar .link_list a.icon2 {
+    width: 321px;
+    height: 99px;
+    background-repeat: no-repeat;
+    background: url("../images/index_z_a4d5870.png") 0px -800px;
+}
+.index_side_bar .link_list a.icon3 {
+    width: 293px;
+    height: 116px;
+    margin-top: -8px;
+    margin-bottom: -6px;
+    background-repeat: no-repeat;
+    background: url("../images/index_z_a4d5870.png") -475px -544px;
+}
+.index_side_bar .link_list a.icon4 {
+    margin-bottom: -14px;
+    width: 312px;
+    height: 108px;
+    background-repeat: no-repeat;
+    background: url("../images/index_z_a4d5870.png") -309px -692px;
+}
+.index_side_bar .link_list a.icon5 {
+    width: 309px;
+    height: 108px;
+    background-repeat: no-repeat;
+    background: url("../images/index_z_a4d5870.png") 0px -692px;
+}
+.index_side_bar .link_list a.icon6 {
+    margin-top: -8px;
+    width: 303px;
+    height: 102px;
+    background-repeat: no-repeat;
+    background: url("../images/index_z_a4d5870.png") -145px -255px;
+}
+.index_side_bar .link_list a.icon7 {
+    width: 330px;
+    height: 255px;
+    margin-top: -6px;
+    background-repeat: no-repeat;
+    background: url("../images/index_z_a4d5870.png") -145px 0px;
+}
+
+
+
+/*阴阳师侧边广告栏结束*/
+
+
+
+
+
+
+
+
+
+
+/*阴阳师攻略章节*/
+
+.strategy_section{
+    width: 100%;
+    height: 600px;
+    background-color: pink;
+    background: url("../images/strategy_bg_0c2f70e.jpg") no-repeat scroll center bottom;
+}
+/*攻略章节导航栏*/
+.strategy_tabs{
+    width: 1200px;
+    height: 96px;
+    /*background-color: red;*/
+    margin: 0 auto 20px;
+}
+.strategy_tabs .tab_name{
+    float: left;
+    width: 134px;
+    height: 85px;
+    margin-right: 12px;
+    background: url("../images/index_z_a4d5870.png") -862px -196px no-repeat;
+}
+
+.strategy_tabs .sperate_dot{
+    margin-top: 50px;
+    float: left;
+    width: 44px;
+    height: 4px;
+    background:url("../images/index_z_a4d5870.png") -1061px -180px no-repeat;
+}
+
+.strategy_tabs a{
+    position: relative;
+    float: left;
+    width: 96px;
+    height: 91px;
+    margin: 5px 8px 0px;
+}
+.strategy_tabs a span {
+    position: relative;
+    z-index: 2;
+    width: 68px;
+    height: 39px;
+    display: block;
+    margin: 20px auto 0px;
+    background:url("../images/index_z_a4d5870.png") -862px -761px no-repeat;
+}
+
+.strategy_tabs a.rumen span {
+    margin-top: 27px;
+    width: 75px;
+    height: 31px;
+    display: block;
+    background:url("../images/index_z_a4d5870.png") -1085px -761px no-repeat;
+}
+.strategy_tabs a.jinjie span {
+    margin-top: 23px;
+    width: 75px;
+    height: 38px;
+    background:url("../images/index_z_a4d5870.png") -930px -761px no-repeat;
+}
+.strategy_tabs a.more span {
+    margin-top: 28px;
+    width: 80px;
+    height: 31px;
+    background:url("../images/index_z_a4d5870.png") -1005px -761px no-repeat;
+}
+
+.strategy_tabs a em {
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    width: 96px;
+    height: 91px;
+    opacity: 0;
+    transform: translate3d(0px, 10%, 0px);
+    transition: all 0.3s linear 0s;
+    background:url("../images/index_z_a4d5870.png") -965px -100px no-repeat;
+}
+.strategy_tabs a.active em, .strategy_tabs a:hover em {
+    transform: translate3d(0px, 0px, 0px);
+    opacity: 1;
+}
+/*章节列表栏*/
+.strategy_list {
+    position: relative;
+    width: 1200px;
+    height: 330px;
+    margin: 0px auto;
+    overflow: hidden;
+}
+.strategy_list ul {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    /*transition: all 0.3s linear 0s;*/
+}
+/*攻略章节列表前面三个ul通用*/
+.strategy_list ul.list {
+    margin-top: 28px;
+}
+.strategy_list ul .seperate_line {
+    position: absolute;
+    width: 18px;
+    height: 274px;
+    left: -34px;
+    top: 0px;
+    background-repeat: no-repeat;
+}
+.strategy_list ul .seperate_line_right {
+    position: absolute;
+    width: 18px;
+    height: 274px;
+    right: -34px;
+    top: 0px;
+    background-repeat: no-repeat;
+}
+.strategy_list ul.list li {
+    float: left;
+    width: 104px;
+    height: 270px;
+    padding-top: 15px;
+    margin-left: 50px;
+    position: relative;
+}
+.strategy_list .list li{
+    opacity: 0;
+    transform: translate3d(0,-30%,0);
+}
+.strategy_list .list li:nth-child(1){
+    transition: all .2s linear 0s;
+}
+.strategy_list .list li:nth-child(2){
+    transition: all .2s linear .1s;
+}
+.strategy_list .list li:nth-child(3){
+    transition: all .2s linear .2s;
+}
+.strategy_list .list li:nth-child(4){
+    transition: all .2s linear .3s;
+}
+.strategy_list .list li:nth-child(5){
+    transition: all .2s linear .4s;
+}
+.strategy_list .list.show li{
+    opacity: 1;
+    transform: translate3d(0,0,0);
+}
+
+.strategy_list ul .strategy_item {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 244px;
+    /*transition: all 0.3s ease 0s; */
+}
+
+.strategy_list ul .strategy_item img {
+    width: 100%;
+    height: 100%;
+}
+
+.strategy_list ul .pic_circle {
+    position: absolute;
+    width: 101px;
+    height: 101px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 100%;
+    top: 0px;
+    left: 50%;
+    transition: all 0.2s linear 0s;
+    margin-left: -52px;
+}
+
+.strategy_list ul .strategy_item:hover {
+    transform: translate3d(0px, -10px, 0px);
+}
+.strategy_list ul .strategy_item:hover .pic_circle {
+    border-color: rgb(252, 204, 0);
+}
+
+
+
+/*攻略章节列表最后一个ul更多*/
+.strategy_list ul.show {
+    z-index: 2;
+    opacity: 1;
+}
+.strategy_list ul.more {
+    width: 780px;
+    padding-left: 38px;
+}
+.strategy_list ul.more li {
+    float: left;
+    margin-right: 55px;
+    width: 325px;
+    height: 50px;
+    padding-top: 10px;
+    border-bottom: 1px dotted rgb(51, 51, 51);
+}
+.strategy_list ul.more li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.strategy_list ul.more li a:hover p {
+    color: rgb(193, 131, 28);
+}
+
+.strategy_list ul.more li p {
+    position: relative;
+    font-size: 14px;
+    color: rgb(51, 51, 51);
+}
+.strategy_list ul.more li p span {
+    display: block;
+    width: 100%;
+    height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.strategy_list ul.more li p i {
+    position: absolute;
+    top: 5px; left: -15px;
+    width: 0px; height: 0px;
+    border-left: 4px solid rgb(51, 51, 51);
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+}
+.strategy_list ul.more li em {
+    font-size: 14px;
+    color: rgb(144, 186, 173);
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 0;
+}
+
+/*攻略章节结束*/
